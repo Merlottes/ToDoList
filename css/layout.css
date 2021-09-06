@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*Website display*/
+.general {
+  display: flex;
+  flex-direction: column;
+}
+/*Section three: this is the banner*/
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+/*Section four: this is the toDo navBar*/
+.banner {
+  grid-column: 1/2;
+  height: 600px;
+  min-width: 75px;
+  background-image: url(../img/banner.jpg);
+  background-size: contain;
+
+  background-position: center;
+}
+/*Section five: this is  calendar and quotes*/
+.nav-todo {
+  grid-column: 2/7;
+}
+/*Section six: board board stikyNotes*/
+.box-group {
+  grid-column: 7/9;
+  display: flex;
+  flex-direction: column;
+}
+/*Section eight: copyrigth */
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 50px;
+  background-color: red;
+  color: white;
+}
+/*Media query*/
+@media (max-width: 768px) {
+  .main-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .banner {
+    max-height: 100px;
+  }
+  .box-group {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .calendar {
+    height: 300px;
+    margin: 0;
+  }
+  .box-quote {
+    margin: 8px;
+    margin-left: 0;
+    padding: 20px 10px;
+    background-color: red;
+    border-radius: 3px;
+  }
+}

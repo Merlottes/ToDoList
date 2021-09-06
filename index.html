@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/UI.css" />
+
+    <script
+      src="https://kit.fontawesome.com/208ba204fe.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title></title>
+  </head>
+  <body>
+    <div class="general">
+      <div class="navbar">
+        <div class="logo">
+          <h2>GrowingUp</h2>
+        </div>
+        <div class="button-profile">
+          <div class="profile" onclick="menuToggle();">
+            <img src="img/profile.jpg" alt="profile" />
+          </div>
+          <div class="menu">
+            <h3>Someone Anonimous <br /><span>Website Designer</span></h3>
+            <ul>
+              <li><img src="1.svg" /><a hred="#">My Profile</a></li>
+              <li><img src="imagen profile" /><a hred="#">Edit Profile</a></li>
+              <li><img src="imagen profile" /><a hred="#">Inbox</a></li>
+              <li><img src="imagen profile" /><a hred="#">Settings</a></li>
+              <li><img src="imagen profile" /><a hred="#">Help</a></li>
+              <li><img src="imagen profile" /><a hred="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="title">
+          <h1 id="TextListaTareas">Lista De Tareas</h1>
+        </div>
+        <form id="formTask">
+          <input
+            type="text"
+            id="title"
+            placeholder=" Add Title"
+            class="form-control"
+          />
+          <textarea
+            id="description"
+            rows="3"
+            cols="80"
+            placeholder=" Add Description"
+            style="resize: none"
+          ></textarea>
+          <button type="submit" class="btn btn0">Subir</button>
+        </form>
+      </div>
+
+      <div class="main-section">
+        <div class="banner"></div>
+
+        <div class="nav-todo">
+          <div class="nav">
+            <div class="midle-section-header">
+              <button class="btn btn0">Move Date</button>
+              <button class="btn btn0">Move Up</button>
+              <button class="btn btn0">Move Down</button>
+              <button class="btn btn0">Share Task</button>
+            </div>
+            <div class="burger">
+              <div class="lineOne"></div>
+              <div class="lineTwo"></div>
+              <div class="lineThree"></div>
+            </div>
+          </div>
+          <div id="tasks"></div>
+        </div>
+
+        <div class="box-group">
+          <div class="box-calendar">
+            <div class="calendar" id="calendar"></div>
+          </div>
+          <div class="box-quote">
+            <div class="text-quote">
+              <p id="body-quote" onload="randomQuote()">
+                “I'm selfish, impatient and a little insecure. I make mistakes,
+                I am out of control and at times hard to handle. But if you
+                can't handle me at my worst, then you sure as hell don't deserve
+                me at my best.”
+              </p>
+              <h3 id="autor-quote">Marilyn Monroe.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="continer-board">
+        <div class="create-note-container">
+          <button class="btn-create-note" onclick="typeNote()">
+            Create Note
+          </button>
+        </div>
+        <div class="stiky-note-container"></div>
+        <div class="stiky-note-template">
+          <textarea
+            id="StikyNote"
+            placeholder="Write Note..."
+            maxlength="96"
+          ></textarea>
+          <button id="Check-icon" type="button" class="btn-stiky-note">
+            <i class="fas fa-check-square"></i>
+          </button>
+          <button id="X-icon" type="button" class="btn-stiky-note">
+            <i class="far fa-window-close"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="bookshelf"></div>
+
+      <div class="copyright"><p id="Copyright">Copyright @Merlottes@</p></div>
+
+      <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      ></script>
+      <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"
+      ></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="index.js" charset="utf-8"></script>
+      <script type="text/javascript">
+        let calendar = new Calendar("calendar");
+        calendar.getElement().addEventListener("change", (e) => {
+          console.log(calendar.value().format("LLL"));
+        });
+      </script>
+    </div>
+  </body>
+</html>

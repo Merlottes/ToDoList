@@ -1,0 +1,234 @@
+/*Style NavBar*/
+.navbar {
+    background-color: #cd0a0a;
+    min-height: 80px;
+  }
+  .logo {
+    margin-left: 10vh;
+    margin-top: 25px;
+  }
+  .button-profile {
+    position: absolute;
+    top: 13px;
+    right: 10vh;
+  }
+  .button-profile .profile {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .button-profile .profile img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .button-profile .menu {
+    position: absolute;
+    top: 120px;
+    right: -10px;
+    padding: 10px 20px;
+    background: white;
+    width: 200px;
+    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 999;
+  }
+  .button-profile .menu.active {
+    top: 80px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .button-profile .menu::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    transform: rotate(45deg);
+  }
+  .button-profile .menu h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    line-height: 1.2em;
+  }
+  .button-profile .menu h3 span {
+    font-size: 14px;
+    color: gray;
+    font-weight: 400;
+  }
+  .button-profile .menu ul li {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid black;
+    display: flex;
+    align-items: center;
+  }
+  .button-profile .menu ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: 0.5s;
+  }
+  .button-profile .menu ul li:hover img {
+    opacity: 1;
+  }
+  .button-profile .menu ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: gray;
+    font-weight: 500 bold;
+    transition: 0.5s;
+  }
+  .button-profile .menu ul li:hover a {
+    color: red;
+  }
+  /*Buttons*/
+.btn {
+    border: 1px solid #3498db;
+    background: none;
+    padding: 10px 10px;
+    font-size: 2.2vh;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin: 7px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 140px;
+    min-height: 10px;
+  }
+  .btn0 {
+    color: #fff;
+  }
+  .btn1 {
+    color: #3498db;
+  }
+  .btn1:hover {
+    color: #fff;
+  }
+  .btn0:hover {
+    color: #3498db;
+  }
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #3498db;
+    z-index: -1;
+    transition: 0.8s;
+  }
+  .btn1::before,
+  .btn0::before {
+    top: 0;
+    border-radius: 0 0 50% 50%;
+  }
+  .btn0::before {
+    height: 180%;
+  }
+  .btn1:hover::before {
+    height: 180%;
+  }
+  .btn0:hover::before {
+    height: 0%;
+  }
+  /*Style banner*/
+  .img-banner {
+    max-width: 100%;
+    min-height: 75vh;
+  }
+  /*Style navBar Tasks*/
+.nav-todo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .midle-section-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 8vh;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  /*Burger nav*/
+  .burger {
+    display: none;
+  }
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: red;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  @media screen and (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+    .midle-section-header {
+      position: absolute;
+      right: 0px;
+      height: 400px;
+      top: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 110px;
+      transform: translateX(400%);
+      transition: transform 0.5s ease-in;
+    }
+    .midle-section-header button {
+      opacity: 0;
+    }
+    .burger {
+      margin-top: 16px;
+      margin-bottom: 20px;
+      margin-right: 16px;
+      display: block;
+      float: right;
+      cursor: pointer;
+    }
+  }
+  .burgerNavActive {
+    transform: translateX(0%);
+  }
+  @keyframes navbarFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  
+  .toggle .lineOne {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .lineTwo {
+    opacity: 0;
+  }
+  .toggle .lineThree {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }

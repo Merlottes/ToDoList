@@ -1,0 +1,349 @@
+/*Style Inputs*/
+.inputs {
+  background-image: url(../img/agenda.jpg);
+  background-color: red;
+  background-blend-mode: darken;
+}
+.title {
+  margin: 15px 0;
+}
+#TextListaTareas {
+  font-size: 7vw;
+  color: #f0f0f0;
+  text-align: center;
+  margin: 0;
+}
+#formTask {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-rows: 1fr, 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  margin-bottom: 15px;
+  z-index: -1;
+}
+#title {
+  border: none;
+  background-color: #f7dad9;
+  border-radius: 3px;
+  padding: 8px;
+  outline: none;
+  padding-left: 3px;
+}
+#title:focus::placeholder {
+  color: transparent;
+}
+#title::placeholder {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #5b5b5b;
+  transition: color 0.4s ease;
+}
+#description {
+  border: none;
+  background-color: #f7dad9;
+  border-radius: 3px;
+  padding: 8px;
+  outline: none;
+  padding-left: 3px;
+}
+#description:focus::placeholder {
+  color: transparent;
+}
+#description::placeholder {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #5b5b5b;
+  transition: color 0.4s ease;
+}
+/*Style tasks*/
+#tasks {
+  width: 100%;
+  height: 600px; /* This is needed to show the scroll bar */
+  align-items: flex-start;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+#tasks::-webkit-scrollbar {
+  width: 8px;
+}
+#tasks::-webkit-scrollbar-thumb {
+  background: #3498db;
+  border-radius: 5px;
+}
+.SectionCheck {
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+}
+input[type="checkbox"] + label {
+  display: block;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.1em;
+  padding-bottom: 0.2em;
+  margin-right: 0.1em;
+  vertical-align: bottom;
+  background-color: white;
+  color: transparent;
+  transition: 0.2s;
+}
+input[type="checkbox"]:checked + label:before {
+  background-color: red;
+  border-color: red;
+  color: #fff;
+}
+.LabelTask {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: red;
+}
+.trash {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 1em;
+  color: white;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.container {
+  width: 90%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+.accordion-item {
+  background-color: red;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.2rem;
+}
+.shadow {
+  background-color: red;
+  border-radius: 0.4rem;
+  box-shadow: 0.5rem 2px 0.5rem black;
+}
+.accordion-link {
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+  background-color: red;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  justify-content: space-between;
+}
+.accordion-link p {
+  color: black;
+  padding: 0 0.5rem;
+  margin: 0.5rem;
+}
+.accordion-link .ion-md-remove {
+  display: none;
+}
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #cd0a0a;
+}
+.answer::before {
+  content: "";
+  position: absolute;
+  width: 0.4rem;
+  height: 95%;
+  background-color: black;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.answer p {
+  font-size: 1rem;
+  color: white;
+  padding: 2rem;
+}
+.answerOn {
+  max-height: 20rem;
+}
+/*Style Calendar*/
+.calendar {
+  margin: 8px;
+  padding: 20px 10px;
+  background-color: red;
+  border-radius: 3px;
+}
+.calendar__header {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.calendar .control {
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 5px;
+  outline: none;
+}
+.grid__header,
+.grid__body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.grid__header {
+  color: white;
+  margin-bottom: 20px;
+}
+.grid__body {
+  grid-auto-rows: 40px;
+  color: #cd0a0a;
+}
+.grid__cell {
+  font-size: 15px;
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.grid__cell--gd {
+  cursor: pointer;
+}
+.grid__cell--selected {
+  color: red;
+  background-color: white;
+  border-radius: 5%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px red inset;
+}
+.grid__cell--disabled {
+  color: #cd0a0a;
+  cursor: not-allowed;
+}
+/*Style the quote*/
+.box-quote {
+  background-image: url(../img/Quote.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  margin: 8px;
+  margin-top: 0;
+  height: 300px;
+  border-radius: 3px;
+}
+.text-quote {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+/*Style the Notes*/
+.continer-board {
+  background-image: url(../img/CorkBoard.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  width: 99%;
+  margin: auto;
+  min-height: 250px;
+  border: 4px solid #aa2b1d;
+}
+.create-note-container {
+  margin-left: 5%;
+}
+.stiky-note-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.stiky-note-template {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  z-index: 1;
+  background-color: red;
+}
+.btn-create-note {
+  border: 1px solid white;
+  background: #3498db;
+  color: white;
+  padding: 10px 10px;
+  font-size: 2.2vh;
+  font-family: sans-serif;
+  cursor: pointer;
+  margin: 7px;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  min-width: 75px;
+  min-height: 10px;
+}
+.btn-create-note:hover {
+  border: 1px solid #3498db;
+  background: white;
+  color: #3498db;
+}
+#StikyNote {
+  box-shadow: 10px 10px 24px 0px rgb(0, 0, 0, 0.75);
+  outline: none;
+  font-size: 18px;
+  border: none;
+  width: 275px;
+  height: 275px;
+  padding: 40px 25px 25px 25px;
+}
+.btn-stiky-note {
+  color: gray;
+}
+#Check-icon {
+  position: absolute;
+  right: 17%;
+  top: 4%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.5em;
+}
+#X-icon {
+  position: absolute;
+  right: 5%;
+  top: 4%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.5em;
+}
+/*Style the horizontal banner*/
+.bookshelf {
+  background-image: url(../img/lineBook.jpg);
+  min-height: 100px;
+}
